@@ -1,4 +1,4 @@
-package cn.jcenterhome.dao;
+//Hibernatepackage cn.jcenterhome.dao;
 import java.util.List;
 import java.util.Map;
 import cn.jcenterhome.vo.TableColumnsVO;
