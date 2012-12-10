@@ -1,7 +1,7 @@
 package cn.jcenterhome.dao;
 import java.util.List;
 /**
- * 接口，封装了所有的数据库基本操作
+ * 接口，
  */
 import java.util.Map;
 import cn.jcenterhome.vo.TableColumnsVO;
