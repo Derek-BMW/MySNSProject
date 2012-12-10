@@ -34,15 +34,15 @@ public class CommonFilter implements Filter {
 			ServletException {
 		HttpServletRequest request = (HttpServletRequest) req;
 		HttpServletResponse response = (HttpServletResponse) res;
-		request.setAttribute("IN_JCHOME", JavaCenterHome.IN_JCHOME);
-		request.setAttribute("JCH_VERSION", JavaCenterHome.JCH_VERSION);
-		request.setAttribute("JCH_RELEASE", JavaCenterHome.JCH_RELEASE);
+		request.setAttribute("IN_JCHOME", JavaCenterHome.IN_JCHOME);     //true
+		request.setAttribute("JCH_VERSION", JavaCenterHome.JCH_VERSION); //2.0
+		request.setAttribute("JCH_RELEASE", JavaCenterHome.JCH_RELEASE); //20110324
 		Map<String, Object> sGlobal = new HashMap<String, Object>();
 		long currentTime = System.currentTimeMillis();
 		int timestamp = (int) (currentTime / 1000);
-		sGlobal.put("timestamp", timestamp);
-		sGlobal.put("starttime", currentTime);
-		request.setAttribute("sGlobal", sGlobal);
+		sGlobal.put("timestamp", timestamp);   //时间戳
+		sGlobal.put("starttime", currentTime);  //开始时间
+		request.setAttribute("sGlobal", sGlobal);   //sGlobal
 		Map<String, String> sCookie = CookieHelper.getCookies(request);
 		Map<Integer, String> sNames = new HashMap<Integer, String>();
 		Map<String, Object> space = new HashMap<String, Object>();

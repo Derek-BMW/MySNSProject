@@ -283,6 +283,8 @@
 		return 1;
 	}
 	
+	//初始化jchConfig，此函数初始化后jchConfig中的键值对为config.properties文件的内容，再加上siteUrl
+	//在initFilter中有一个相同功能的方法，作用是初始化jchConfig
 	private void initConfig(HttpServletRequest request) throws IOException {
 		PropertiesHelper propHelper = new PropertiesHelper(JavaCenterHome.jchRoot + "config.properties");
 		Properties config = propHelper.getProperties();

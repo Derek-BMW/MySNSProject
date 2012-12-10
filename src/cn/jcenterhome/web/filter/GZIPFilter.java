@@ -14,11 +14,11 @@ import cn.jcenterhome.web.servlet.GZIPResponseWrapper;
 public class GZIPFilter implements Filter {
 	public void doFilter(ServletRequest req, ServletResponse res, FilterChain chain) throws IOException,
 			ServletException {
-		int gzipCompress = Common.intval(JavaCenterHome.jchConfig.get("gzipCompress"));
+		int gzipCompress = Common.intval(JavaCenterHome.jchConfig.get("gzipCompress"));		System.out.println("gzipCpmpress===" + gzipCompress);
 		if (gzipCompress == 1 && req instanceof HttpServletRequest) {
 			HttpServletRequest request = (HttpServletRequest) req;
 			HttpServletResponse response = (HttpServletResponse) res;
-			String ae = request.getHeader("accept-encoding");
+			String ae = request.getHeader("accept-encoding");			System.out.println("ae===" + ae);
 			if (ae != null && ae.indexOf("gzip") != -1) {
 				GZIPResponseWrapper wrappedResponse = new GZIPResponseWrapper(response);
 				chain.doFilter(req, wrappedResponse);

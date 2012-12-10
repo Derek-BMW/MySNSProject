@@ -38,7 +38,7 @@ public class InitFilter implements Filter {
 			}
 		}
 		chain.doFilter(request, res);
-	}
+	}		//初始化jchConfig，此函数初始化后jchConfig中的键值对为config.properties文件的内容，再加上siteUrl
 	private synchronized void initConfig(HttpServletRequest request, Map<String, String> jchConfig)
 			throws IOException {
 		PropertiesHelper propHelper = new PropertiesHelper(JavaCenterHome.jchRoot + "config.properties");

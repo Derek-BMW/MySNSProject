@@ -8,8 +8,10 @@
 	</mime-mapping>
 	<mime-mapping>
 		<extension>zip</extension>
-		<mime-type>application/zip</mime-type>
+		<mime-type>application/zip</mime-type> 
 	</mime-mapping>
+	
+	<!-- 权限拦截，禁止访问一些资源 --> 
 	<filter>
 		<filter-name>AccessFilter</filter-name>
 		<filter-class>cn.jcenterhome.web.filter.AccessFilter</filter-class>

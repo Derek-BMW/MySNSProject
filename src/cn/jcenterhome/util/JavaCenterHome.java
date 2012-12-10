@@ -8,7 +8,7 @@ public final class JavaCenterHome {
 	public static final String JCH_VERSION = "2.0";
 	public static final int JCH_RELEASE = 20110324;
 	public static String jchRoot = null;
-	public static Map<String, String> jchConfig = new HashMap<String, String>();
+	public static Map<String, String> jchConfig = new HashMap<String, String>();	
 	private static Map<String, String> tableNames = new HashMap<String, String>();
 	public static String getTableName(String name) {
 		String tableName = tableNames.get(name);

@@ -9,7 +9,7 @@ public class CookieHelper {
 		Map<String, String> sCookie = new HashMap<String, String>();
 		Cookie[] cookies = request.getCookies();
 		if (cookies != null) {
-			Map<String, String> jchConfig = JavaCenterHome.jchConfig;
+			Map<String, String> jchConfig = JavaCenterHome.jchConfig;			System.out.println("jchConfig===" + jchConfig);
 			String cookiePre = jchConfig.get("cookiePre");
 			int prelength = Common.strlen(cookiePre);
 			for (Cookie cookie : cookies) {
