@@ -1,10 +1,13 @@
 package cn.jcenterhome.dao;
 import java.util.List;
+/**
+ * 接口，封装了所有的数据库基本操作
+ */
 import java.util.Map;
 import cn.jcenterhome.vo.TableColumnsVO;
 import cn.jcenterhome.vo.TableFieldVO;
 import cn.jcenterhome.vo.TableStatusVO;
-public interface DataBaseDao {  //////////
+public interface DataBaseDao {  
 	public List<Map<String, Object>> executeQuery(String sql);
 	public List<String> executeQuery(String sql, int columnIndex);
 	public int executeUpdate(String sql);
