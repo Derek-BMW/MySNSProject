@@ -31,31 +31,30 @@ public class OtherAction extends BaseAction {
 	@SuppressWarnings("unchecked")
 	public ActionForward index(ActionMapping mapping, ActionForm form, HttpServletRequest request,
 			HttpServletResponse response) throws Exception {
-		String requestURI = (String) request.getAttribute("requestURI");		//System.out.println("requestURI===" + requestURI);
+		String requestURI = (String) request.getAttribute("requestURI");//System.out.println("requestURI===" + requestURI);
 		String queryString = null;
 		if (requestURI != null) {
 			queryString = requestURI.substring(requestURI.indexOf("?") + 1);
-		}
-		if (Common.isNumeric(queryString)) {			//System.out.println("queryString===" + queryString);
-			return showMessage(request, response, "enter_the_space", "space.jsp?uid=" + queryString, 0);
+		}//System.out.println("queryString===" + queryString);
+		if (Common.isNumeric(queryString)) {			return showMessage(request, response, "enter_the_space", "space.jsp?uid=" + queryString, 0);
 		}
 		Map<String, Object> sGlobal = (Map<String, Object>) request.getAttribute("sGlobal");
 		Map<String, Object> sConfig = (Map<String, Object>) request.getAttribute("sConfig");			/*	for(String key : sConfig.keySet()){			System.out.println(key + "===" + sConfig.get(key));		}		for(String key : sGlobal.keySet()){			System.out.println(key + "=" + sGlobal.get(key));		}		*/
-		String paramDo = request.getParameter("do");
+		String paramDo = request.getParameter("do");//System.out.println("paramDo===" + paramDo);  //首次  paramDo = null
 		if (paramDo == null && !Common.empty(sConfig.get("allowdomain"))) {
 			String host = request.getServerName(); 
 			String domainRoot = (String) sConfig.get("domainroot"); 
 			String[] hostArr = host.split("\\.");
 			String[] domainRootArr = domainRoot.split("\\.");
 			int hostArrLen = hostArr.length;
-			int domainRootArrLen = domainRootArr.length;
+			int domainRootArrLen = domainRootArr.length;//System.out.println(host + domainRoot + hostArrLen + hostArr.toString() + domainRootArr.toString());
 			if (hostArrLen > 2 && hostArrLen > domainRootArrLen && !hostArr[0].equals("www")
 					&& !Common.isHoldDomain(sConfig, hostArr[0])) {
 				return showMessage(request, response, "enter_the_space", sConfig.get("siteallurl")
 						+ "space.jsp?domain=" + hostArr[0], 0);
 			}
 		}
-		int supe_uid = (Integer) sGlobal.get("supe_uid");		if (supe_uid > 0) {
+		int supe_uid = (Integer) sGlobal.get("supe_uid");//System.out.println("supe_uid===" + supe_uid);  //首次supe_uid = 1		if (supe_uid > 0) {			//在第一次访问首页的时候会执行这个函数，显示首页
 			return showMessage(request, response, "enter_the_space", "space.jsp?do=home", 0);
 		}
 		Map<String, Object> space = (Map<String, Object>) request.getAttribute("space");

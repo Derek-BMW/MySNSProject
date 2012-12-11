@@ -284,7 +284,7 @@ public class BlockAction extends BaseAction {
 	@SuppressWarnings("unchecked")
 	private Map<String, Map<Integer, String>> getTables(String tablePrefix) {
 		String filePath = JavaCenterHome.jchRoot + "data/data_table_" + JavaCenterHome.JCH_RELEASE + ".txt";
-		String content = FileHelper.readFile(filePath).trim();		System.out.println("filePath===" + filePath);
+		String content = FileHelper.readFile(filePath).trim();//System.out.println("filePath===" + filePath);
 		Map<String, Map<Integer, String>> tables = null;
 		if (content.length() > 0) {
 			tables = (Map<String, Map<Integer, String>>) Serializer.unserialize(content, true);

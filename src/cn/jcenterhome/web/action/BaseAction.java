@@ -79,7 +79,7 @@ public class BaseAction extends DispatchAction {
 		Map<String, Object> sGlobal = (Map<String, Object>) request.getAttribute("sGlobal");
 		Map<String, Object> sConfig = (Map<String, Object>) request.getAttribute("sConfig");
 		String mobile = (String) sGlobal.get("mobile");
-		String message = Common.getMessage(request, msgKey, args);
+		String message = Common.getMessage(request, msgKey, args);//System.out.println(mobile + ":::" + message);   //首次  mobile=null    message=进入个人空间页面
 		if (Common.empty(mobile)) {
 			int inajax = (Integer) sGlobal.get("inajax");
 			if (inajax == 0 && forwardURL != null && second == 0) {

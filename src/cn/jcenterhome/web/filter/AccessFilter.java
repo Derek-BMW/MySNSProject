@@ -6,7 +6,7 @@ import javax.servlet.FilterChain;
 import javax.servlet.FilterConfig;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;
-import javax.servlet.ServletResponse;
+import javax.servlet.ServletResponse;/** * 该过滤器的作用是不允许用户访问一些资源 * @author 马超 * */
 public class AccessFilter implements Filter {
 	public void destroy() {  
 	}
