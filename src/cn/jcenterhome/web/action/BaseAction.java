@@ -82,7 +82,7 @@ public class BaseAction extends DispatchAction {
 		String message = Common.getMessage(request, msgKey, args);//System.out.println(mobile + ":::" + message);   //首次  mobile=null    message=进入个人空间页面
 		if (Common.empty(mobile)) {
 			int inajax = (Integer) sGlobal.get("inajax");
-			if (inajax == 0 && forwardURL != null && second == 0) {
+			if (inajax == 0 && forwardURL != null && second == 0) {System.out.println(inajax + forwardURL + second);
 				response.setStatus(HttpServletResponse.SC_MOVED_PERMANENTLY);
 				response.setHeader("Location", forwardURL);
 			} else {

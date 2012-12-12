@@ -45,8 +45,7 @@ public class SpaceAction extends BaseAction {
 	private BlogService blogService = (BlogService) BeanFactory.getBean("blogService");
 	@Override
 	public ActionForward execute(ActionMapping mapping, ActionForm form, HttpServletRequest request,
-			HttpServletResponse response) throws Exception {
-		Map<String, Object> sGlobal = (Map<String, Object>) request.getAttribute("sGlobal");
+			HttpServletResponse response) throws Exception {		Map<String, Object> sGlobal = (Map<String, Object>) request.getAttribute("sGlobal");
 		Map<String, Object> sConfig = (Map<String, Object>) request.getAttribute("sConfig");
 		Common.getCacheDate(request, response, "/data/cache/cache_magic.jsp", "globalMagic");
 		int supe_uid = (Integer) sGlobal.get("supe_uid");
