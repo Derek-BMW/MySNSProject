@@ -6257,7 +6257,7 @@ public class SpaceAction extends BaseAction {
 	public ActionForward space_home(HttpServletRequest request, HttpServletResponse response) {
 		Map<String, Object> sGlobal = (Map<String, Object>) request.getAttribute("sGlobal");
 		Map<String, Object> sConfig = (Map<String, Object>) request.getAttribute("sConfig");
-		Map<String, Object> space = (Map<String, Object>) request.getAttribute("space");
+		Map<String, Object> space = (Map<String, Object>) request.getAttribute("space");						for (String str : sConfig.keySet()) {			System.out.println(str + "===" + sConfig.get(str));		}				
 		if (Common.empty(sConfig.get("showallfriendnum")) || (Integer) sConfig.get("showallfriendnum") < 1) {
 			sConfig.put("showallfriendnum", 10);
 		}
