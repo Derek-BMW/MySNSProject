@@ -36,7 +36,7 @@ public class CacheService {
 	}
 	public void config_cache() throws IOException {
 		config_cache(true);
-	}
+	}		/**	 * sConfig的主要初始化工作在这里完成，查询数据库的jch_config表	 * @param updateData	 * @throws IOException	 */
 	public void config_cache(boolean updateData) throws IOException {
 		Map<String, Object> sConfig = new HashMap<String, Object>();
 		List<Map<String, Object>> configs = dataBaseDao.executeQuery("SELECT * FROM "
@@ -47,7 +47,7 @@ public class CacheService {
 			if ("privacy".equals(var)) {
 				val = Common.empty(val) ? val : Serializer.unserialize((String) val, false);
 			}
-			sConfig.put(var, val);
+			sConfig.put(var, val);//System.out.println(var + "=:=:=" + val);
 		}
 		cache_write("cache_config", "sConfig", sConfig);
 		if (updateData) {
