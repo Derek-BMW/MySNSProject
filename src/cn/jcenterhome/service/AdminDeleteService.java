@@ -30,7 +30,7 @@ public class AdminDeleteService {
 				if (!managebatch && supe_uid != uid) {
 					delnum++;
 				}
-			}
+			}   
 		}
 		if (blogs.isEmpty() || (!managebatch && delnum > 1)) {
 			return false;
